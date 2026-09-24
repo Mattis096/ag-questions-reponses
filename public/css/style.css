@@ -92,6 +92,7 @@ h1 {
     padding-bottom: var(--spacing-sm);
     border-bottom: var(--border-width) solid var(--color-border);
     font-size: var(--font-size-section);
+    color: var(--color-text-section)
 }
 
 /*

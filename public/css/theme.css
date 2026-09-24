@@ -15,6 +15,7 @@
     /* Texte */
     --color-text: #1f2933;
     --color-text-muted: #969696;
+    --color-text-section: #322b90;
 
     /* Surfaces */
     --color-white: #f8f9fa;
@@ -29,6 +30,8 @@
     /* Date limite */
     --color-deadline-background: #f8d7da;
     --color-deadline-text: #721c24;
+
+  
 
 
     /*
