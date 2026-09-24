@@ -13,6 +13,9 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class QuestionType extends AbstractType
 {
@@ -142,8 +145,30 @@ final class QuestionType extends AbstractType
                     new Length(max: 500),
                 ],
             ])
+            ->add('consent', CheckboxType::class, [
+                'label' => sprintf(
+                    'En soumettant ce formulaire, j’accepte que la Fédération Française de Cyclotourisme collecte les données saisies dans le cadre de l’Assemblée générale de %s (%s).',
+                    $options['event_city'],
+                    $options['event_department'],
+                ),
+                'mapped' => false,
+                'required' => true,
+                'constraints' => [
+                    new IsTrue(
+                        message: 'Vous devez accepter cette condition pour envoyer le formulaire.'
+                    ),
+                ],
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Envoyer',
             ]);
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'event_city' => '',
+            'event_department' => '',
+        ]);
     }
 }

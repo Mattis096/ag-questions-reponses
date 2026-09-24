@@ -33,7 +33,10 @@ final class Application
 
         $formFactory = FormFactory::create();
 
-        $form = $formFactory->create(QuestionType::class);
+        $form = $formFactory->create(QuestionType::class, null, [
+            'event_city' => $config->getEventCity(),
+            'event_department' => $config->getEventDepartment(),
+        ]);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $form->submit($_POST[$form->getName()] ?? []);

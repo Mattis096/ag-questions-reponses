@@ -132,6 +132,39 @@ label.required::after {
 }
 
 /*
+ * Consent
+ */
+.consent {
+    margin-bottom: var(--spacing-lg);
+}
+
+.consent > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin: 2px 0 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.consent label {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: var(--font-weight-bold);
+    font-style: italic;
+    text-transform: none;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+/*
  * Champs de formulaire
  */
 input,
