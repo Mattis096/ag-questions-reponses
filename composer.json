@@ -1,0 +1,22 @@
+{
+    "name": "mattisrischard/ag-questions-reponses",
+    "description": "Formulaire Questions-Réponses de l'Assemblée Générale FFVélo",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mattisrischard\\AgQuestionsReponses\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mattis Rischard"
+        }
+    ],
+    "require": {
+        "symfony/form": "^8.1",
+        "symfony/validator": "^8.1",
+        "symfony/security-csrf": "^8.1",
+        "twig/twig": "^3.29",
+        "symfony/twig-bridge": "^8.1"
+    }
+}
