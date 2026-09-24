@@ -14,14 +14,41 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Component\Translation\Translator;
+use App\Config\AppConfig;
+use App\Database\Connection;
+use App\Repository\QuestionRepository;
 
 final class Application
 {
     public function run(): void
     {
+        $projectDirectory = dirname(__DIR__);
+
+        $config = AppConfig::fromEnvironment($projectDirectory);
+
+        $connection = new Connection($config->getDatabasePath());
+        $pdo = $connection->getPdo();
+
+        $questionRepository = new QuestionRepository($pdo);
+
         $formFactory = FormFactory::create();
 
         $form = $formFactory->create(QuestionType::class);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $form->submit($_POST[$form->getName()] ?? []);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $data = $form->getData();
+
+                $data['created_at'] = (new \DateTimeImmutable())->format('Y-m-d H:i:s');
+
+                $questionRepository->create($data);
+
+                header('Location: /?success=1');
+                exit;
+            }
+        }
 
         $loader = new FilesystemLoader([
             dirname(__DIR__) . '/templates',
@@ -63,9 +90,10 @@ final class Application
         );
 
         $twig->addExtension(new FormExtension());
-
+        $success = isset($_GET['success']) && $_GET['success'] === '1';
         echo $twig->render('question_form.html.twig', [
             'form' => $form->createView(),
+            'success' => $success,
         ]);
     }
 }

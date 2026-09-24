@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 final class QuestionType extends AbstractType
 {
@@ -47,6 +48,7 @@ final class QuestionType extends AbstractType
             ])
             ->add('club_function', TextType::class, [
                 'required' => false,
+                'label' => 'Fonction exercée',
                 'constraints' => [
                     new Length(max: 255),
                 ],
@@ -59,6 +61,7 @@ final class QuestionType extends AbstractType
             ])
             ->add('department_function', TextType::class, [
                 'required' => false,
+                'label' => 'Fonction exercée',
                 'constraints' => [
                     new Length(max: 255),
                 ],
@@ -71,6 +74,7 @@ final class QuestionType extends AbstractType
             ])
             ->add('region_function', TextType::class, [
                 'required' => false,
+                'label' => 'Fonction exercée',
                 'constraints' => [
                     new Length(max: 255),
                 ],
@@ -92,6 +96,9 @@ final class QuestionType extends AbstractType
                 'constraints' => [
                     new Length(max: 5000),
                 ],
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Envoyer',
             ]);
     }
 }
