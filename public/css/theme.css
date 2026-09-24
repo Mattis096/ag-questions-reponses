@@ -1,0 +1,100 @@
+:root {
+    /*
+     * ========================================
+     * COULEURS
+     * ========================================
+     */
+
+    /* Couleur principale */
+    --color-primary: #2f6f3e;
+    --color-primary-hover: #245832;
+
+    /* Couleurs secondaires */
+    --color-secondary: #f4f6f8;
+
+    /* Texte */
+    --color-text: #1f2933;
+    --color-text-muted: #6b7280;
+
+    /* Surfaces */
+    --color-white: #ffffff;
+    --color-border: #e1e5e8;
+    --color-input-border: #cbd2d9;
+
+    /* États */
+    --color-error: #b42318;
+    --color-success: #2f6f3e;
+
+
+    /*
+     * ========================================
+     * TYPOGRAPHIE
+     * ========================================
+     */
+
+    --font-family-base: Arial, sans-serif;
+
+    --font-size-base: 1rem;
+    --font-size-small: 0.9rem;
+    --font-size-title: 2rem;
+    --font-size-section: 1.25rem;
+
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+
+    /*
+     * ========================================
+     * ESPACEMENTS
+     * ========================================
+     */
+
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+
+
+    /*
+     * ========================================
+     * BORDURES
+     * ========================================
+     */
+
+    --border-width: 1px;
+    --border-radius-sm: 7px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+
+    /*
+     * ========================================
+     * OMBRES
+     * ========================================
+     */
+
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+
+    /*
+     * ========================================
+     * FORMULAIRES
+     * ========================================
+     */
+
+    --input-padding: 12px 14px;
+    --input-focus-shadow: 0 0 0 3px rgba(47, 111, 62, 0.15);
+
+    --textarea-min-height: 130px;
+
+
+    /*
+     * ========================================
+     * LAYOUT
+     * ========================================
+     */
+
+    --page-max-width: 800px;
+}

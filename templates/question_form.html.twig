@@ -3,11 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assemblée Générale - Questions / Réponses</title>
-</head>
-<body>
-    <h1>Questions / Réponses</h1>
 
-    {{ form(form) }}
+    <title>Assemblée Générale - Questions / Réponses</title>
+
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <header class="page-header">
+            <img
+                src="/images/logo.png"
+                alt="Fédération Française de Cyclotourisme"
+                class="logo"
+            >
+
+            <p class="organization">
+                FÉDÉRATION FRANÇAISE DE CYCLOTOURISME
+            </p>
+
+            <h1>ASSEMBLÉE GÉNÉRALE</h1>
+
+            <p class="event-date">
+                13 et 14 décembre 2025 - Albi (81)
+            </p>
+
+            <h2>POSEZ VOS QUESTIONS AU COMITÉ DIRECTEUR FÉDÉRAL</h2>
+        </header>
+
+        <div class="deadline">
+            DATE LIMITE DE RÉCEPTION : LUNDI 25 OCTOBRE 2025
+        </div>
+
+        <main class="form-container">
+
+            <p class="required-info">
+                Les champs marqués d'une * sont obligatoires.
+            </p>
+
+            {{ form_start(form) }}
+
+            <section class="form-section">
+
+                <div class="form-row">
+                    <div class="form-field">
+                        {{ form_row(form.first_name) }}
+                    </div>
+
+                    <div class="form-field">
+                        {{ form_row(form.last_name) }}
+                    </div>
+                </div>
+
+                <div class="form-field full-width">
+                    {{ form_row(form.email) }}
+                </div>
+
+            </section>
+
+            <section class="form-section">
+
+                <h3>CLUB</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        {{ form_row(form.club) }}
+                    </div>
+
+                    <div class="form-field">
+                        {{ form_row(form.club_function) }}
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="form-section">
+
+                <h3>DÉPARTEMENT</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        {{ form_row(form.department) }}
+                    </div>
+
+                    <div class="form-field">
+                        {{ form_row(form.department_function) }}
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="form-section">
+
+                <h3>RÉGION</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        {{ form_row(form.region) }}
+                    </div>
+
+                    <div class="form-field">
+                        {{ form_row(form.region_function) }}
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="questions-section">
+
+                <h3>VOS QUESTIONS</h3>
+
+                <div class="form-field">
+                    {{ form_row(form.question_1) }}
+                </div>
+
+                <div class="form-field">
+                    {{ form_row(form.question_2) }}
+                </div>
+
+                <div class="form-field">
+                    {{ form_row(form.question_3) }}
+                </div>
+
+            </section>
+
+            <div class="form-submit">
+                {{ form_row(form.submit) }}
+            </div>
+
+            {{ form_end(form) }}
+
+        </main>
+
+    </div>
 </body>
 </html>

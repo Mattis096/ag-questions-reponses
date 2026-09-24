@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: var(--spacing-xl) var(--spacing-md);
+    font-family: var(--font-family-base);
+    background: var(--color-secondary);
+    color: var(--color-text);
+}
+
+/*
+ * Conteneur principal
+ */
+.page {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+/*
+ * Header
+ */
+.page-header {
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto var(--spacing-md);
+}
+
+.organization {
+    margin: 0 0 var(--spacing-sm);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: var(--font-size-title);
+}
+
+.event-date {
+    margin: 0 0 25px;
+    font-size: var(--font-size-base);
+}
+
+.page-header h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: var(--font-size-section);
+}
+
+/*
+ * Date limite
+ */
+.deadline {
+    margin: var(--spacing-lg) 0;
+    padding: 15px var(--spacing-md);
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+}
+
+/*
+ * Sections du formulaire
+ */
+.form-section,
+.questions-section {
+    margin-bottom: 35px;
+}
+
+.form-section h3,
+.questions-section h3 {
+    margin: 0 0 var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: var(--border-width) solid var(--color-border);
+    font-size: var(--font-size-section);
+}
+
+/*
+ * Champs sur une même ligne
+ *
+ * Desktop :
+ *
+ * ┌───────────────────┐  ┌───────────────────┐
+ * │ Club              │  │ Fonction          │
+ * └───────────────────┘  └───────────────────┘
+ */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.form-field {
+    margin-bottom: var(--spacing-md);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/*
+ * Labels
+ */
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: var(--font-weight-semibold);
+}
+
+/*
+ * Champs de formulaire
+ */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: var(--input-padding);
+    border: var(--border-width) solid var(--color-input-border);
+    border-radius: var(--border-radius-sm);
+    font: inherit;
+    background: var(--color-white);
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+/*
+ * Focus
+ */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--input-focus-shadow);
+}
+
+/*
+ * Zones de texte
+ */
+textarea {
+    min-height: var(--textarea-min-height);
+    resize: vertical;
+}
+
+/*
+ * Bouton
+ */
+button,
+input[type="submit"] {
+    width: 100%;
+    padding: 13px var(--spacing-md);
+    border: 0;
+    border-radius: var(--border-radius-sm);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font: inherit;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: var(--color-primary-hover);
+}
+
+/*
+ * Erreurs Symfony
+ */
+ul {
+    margin: 6px 0 0;
+    padding-left: var(--spacing-md);
+    color: var(--color-error);
+}
+
+p {
+    line-height: 1.6;
+}
+
+/*
+ * Mobile
+ */
+@media (max-width: 600px) {
+    body {
+        padding: var(--spacing-md) 12px;
+    }
+
+    .page {
+        padding: 25px var(--spacing-md);
+        border-radius: var(--border-radius-md);
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .page-header h2 {
+        font-size: 1.1rem;
+    }
+
+    /*
+     * Sur téléphone :
+     * les deux champs passent l'un sous l'autre.
+     */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
