@@ -6,24 +6,29 @@
      */
 
     /* Couleur principale */
-    --color-primary: #2f6f3e;
-    --color-primary-hover: #245832;
+    --color-primary: #007bff;
+    --color-primary-hover: #0062cc;
 
     /* Couleurs secondaires */
-    --color-secondary: #f4f6f8;
+    --color-secondary: #2e3192;
 
     /* Texte */
     --color-text: #1f2933;
-    --color-text-muted: #6b7280;
+    --color-text-muted: #969696;
 
     /* Surfaces */
-    --color-white: #ffffff;
-    --color-border: #e1e5e8;
-    --color-input-border: #cbd2d9;
+    --color-white: #f8f9fa;
+    --color-input-background: #ffffff;
+    --color-border: #dedede;
+    --color-input-border: #dedede;
 
     /* États */
-    --color-error: #b42318;
+    --color-error: #212529;
     --color-success: #2f6f3e;
+
+    /* Date limite */
+    --color-deadline-background: #f8d7da;
+    --color-deadline-text: #721c24;
 
 
     /*

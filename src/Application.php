@@ -94,6 +94,19 @@ final class Application
         echo $twig->render('question_form.html.twig', [
             'form' => $form->createView(),
             'success' => $success,
+
+            'event_name' => $config->getEventName(),
+            'event_city' => $config->getEventCity(),
+            'event_department' => $config->getEventDepartment(),
+
+            'event_dates_formatted' => $config->formatEventDates(
+                $config->getEventStartDate(),
+                $config->getEventEndDate(),
+            ),
+
+            'question_deadline_formatted' => $config->formatDate(
+                $config->getQuestionDeadline()
+            ),
         ]);
     }
 }

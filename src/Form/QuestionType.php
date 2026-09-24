@@ -21,19 +21,31 @@ final class QuestionType extends AbstractType
         array $options,
     ): void {
         $builder
-            ->add('first_name', TextType::class, [
+           ->add('first_name', TextType::class, [
+                'label' => 'Prénom',
+                'attr' => [
+                    'placeholder' => 'Votre prénom',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 100),
                 ],
             ])
             ->add('last_name', TextType::class, [
+                'label' => 'Nom',
+                'attr' => [
+                    'placeholder' => 'Votre nom',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 100),
                 ],
             ])
             ->add('email', EmailType::class, [
+                'label' => 'Email',
+                'attr' => [
+                    'placeholder' => 'exemple@email.com',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
@@ -41,6 +53,10 @@ final class QuestionType extends AbstractType
                 ],
             ])
             ->add('club', TextType::class, [
+                'label' => 'Votre Club',
+                'attr' => [
+                    'placeholder' => 'Si vous êtes membre individuel, saisissez MI',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 255),
@@ -49,11 +65,18 @@ final class QuestionType extends AbstractType
             ->add('club_function', TextType::class, [
                 'required' => false,
                 'label' => 'Fonction exercée',
+                'attr' => [
+                    'placeholder' => 'Si aucune, laisser vide',
+                ],
                 'constraints' => [
                     new Length(max: 255),
                 ],
             ])
             ->add('department', TextType::class, [
+                'label' => 'Votre département',
+                'attr' => [
+                    'placeholder' => 'Votre Comité départemental',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 100),
@@ -62,11 +85,18 @@ final class QuestionType extends AbstractType
             ->add('department_function', TextType::class, [
                 'required' => false,
                 'label' => 'Fonction exercée',
+                'attr' => [
+                    'placeholder' => 'Si aucune, laisser vide',
+                ],
                 'constraints' => [
                     new Length(max: 255),
                 ],
             ])
             ->add('region', TextType::class, [
+                'label' => 'Votre région',
+                'attr' => [
+                    'placeholder' => 'Votre Comité régional',
+                ],
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 100),
@@ -75,26 +105,41 @@ final class QuestionType extends AbstractType
             ->add('region_function', TextType::class, [
                 'required' => false,
                 'label' => 'Fonction exercée',
+                'attr' => [
+                    'placeholder' => 'Si aucune, laisser vide',
+                ],
                 'constraints' => [
                     new Length(max: 255),
                 ],
             ])
             ->add('question_1', TextareaType::class, [
+                'label' => 'Question 1',
+                'attr' => [
+                    'placeholder' => 'Votre question (500 caractères max)',
+                ],
                 'constraints' => [
                     new NotBlank(),
-                    new Length(max: 5000),
+                    new Length(max: 500),
                 ],
             ])
             ->add('question_2', TextareaType::class, [
                 'required' => false,
+                'label' => 'Question 2',
+                'attr' => [
+                    'placeholder' => 'Votre question (500 caractères max)',
+                ],
                 'constraints' => [
-                    new Length(max: 5000),
+                    new Length(max: 500),
                 ],
             ])
             ->add('question_3', TextareaType::class, [
                 'required' => false,
+                'label' => 'Question 3',
+                'attr' => [
+                    'placeholder' => 'Votre question (500 caractères max)',
+                ],
                 'constraints' => [
-                    new Length(max: 5000),
+                    new Length(max: 500),
                 ],
             ])
             ->add('submit', SubmitType::class, [

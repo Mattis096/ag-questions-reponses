@@ -24,17 +24,18 @@
                 FÉDÉRATION FRANÇAISE DE CYCLOTOURISME
             </p>
 
-            <h1>ASSEMBLÉE GÉNÉRALE</h1>
+            <h1>{{ event_name }}</h1>
 
             <p class="event-date">
-                13 et 14 décembre 2025 - Albi (81)
+                {{ event_dates_formatted }} - {{ event_city }} ({{ event_department }})
             </p>
 
             <h2>POSEZ VOS QUESTIONS AU COMITÉ DIRECTEUR FÉDÉRAL</h2>
         </header>
 
         <div class="deadline">
-            DATE LIMITE DE RÉCEPTION : LUNDI 25 OCTOBRE 2025
+            DATE LIMITE DE RÉCEPTION :
+            {{ question_deadline_formatted }}
         </div>
 
         <main class="form-container">
